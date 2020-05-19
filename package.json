@@ -1,8 +1,9 @@
 {
   "name": "p5.glitch",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "p5.js library for glitching images and binary files",
   "main": "p5.glitch.js",
+  "files": [],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,7 +25,7 @@
     "base64"
   ],
   "author": "Ted Davis",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ffd8/p5.glitch/issues"
   },

@@ -1,4 +1,4 @@
-// p5.glitch v0.1.0
+// p5.glitch v0.1.2
 // cc teddavis.org 2020
 
 class Glitch{

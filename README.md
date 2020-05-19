@@ -3,7 +3,7 @@
 p5.js library for glitching images and binary files.  
 cc [teddavis.org](https://teddavis.org) 2020
 
-![p5.glitch logo animated](includes/images/p5.glitch_ani.gif)
+![p5.glitch logo animated](https://raw.githubusercontent.com/ffd8/p5.glitch/master/includes/images/p5.glitch_ani.gif)
 
 
 ## Contents
@@ -32,10 +32,10 @@ Here are a few examples to get you going:
 
 Download [`p5.glitch.js`](p5.glitch.js) and include with your p5.js sketch's index.html file.  
 
-Load remotely via [jsdelivr CDN](https://cdn.jsdelivr.net/npm/p5.glitch@0.1.0/p5.glitch.js):
+Load remotely via [jsdelivr CDN](https://cdn.jsdelivr.net/npm/p5.glitch@0.1.2/p5.glitch.js):
 
 ```javascript
-<script src="https://cdn.jsdelivr.net/npm/p5.glitch@0.1.0/p5.glitch.js
+<script src="https://cdn.jsdelivr.net/npm/p5.glitch@0.1.2/p5.glitch.js
 "></script>
 ```
 
@@ -472,4 +472,4 @@ Interested in building additional glitch functions or finding a solution for p5.
 
 
 ## License
-[ISC](https://choosealicense.com/licenses/isc/)
+[mit](https://choosealicense.com/licenses/mit/)
