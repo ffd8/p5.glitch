@@ -17,15 +17,15 @@ cc [teddavis.org](https://teddavis.org) 2020
 ## Examples
 Here are a few examples to get you going:
 
-- image – [demo](examples/web/P5L_p5.glitch-image.html) / [html](https://github.com/ffd8/p5.glitch/examples/web/P5L_p5.glitch-image.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/wwo8xjaIt)
- / [p5live](examples/p5live/P5L_p5.glitch-image.json)
-- image-types – [demo](examples/web/P5L_p5.glitch-image-types.html) / [html](https://github.com/ffd8/p5.glitch/examples/web/P5L_p5.glitch-image-types.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/6_7JU6kI0)
- / [p5live](examples/p5live/P5L_p5.glitch-image-types.json)
-- buildimage-callback – [demo](examples/web/P5L_p5.glitch-buildimage-callback.html) / [html](https://github.com/ffd8/p5.glitch/examples/web/P5L_p5.glitch-buildimage-callback.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/OOeGitKMw) / [p5live](examples/p5live/P5L_p5.glitch-buildimage-callback.json)
-- webcam – [demo](examples/web/P5L_p5.glitch-webcam.html) / [html](https://github.com/ffd8/p5.glitch/examples/web/P5L_p5.glitch-webcam.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/5aew0QfB4) / [p5live](examples/p5live/P5L_p5.glitch-webcam.json)
-- video – [demo](examples/web/P5L_p5.glitch-video.html) / [html](https://github.com/ffd8/p5.glitch/examples/web/P5L_p5.glitch-video.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/6OfUZnw9d) / [p5live](examples/p5live/P5L_p5.glitch-video.json)
-- binary-font – [demo](examples/web/P5L_p5.glitch-binary-font.html) / [html](https://github.com/ffd8/p5.glitch/examples/web/P5L_p5.glitch-binary-font.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/FHdpg_tt9) / [p5live](examples/p5live/P5L_p5.glitch-binary-font.json)
-- almost-everything – [demo](examples/web/P5L_p5.glitch-almost-everything.html) / [html](https://github.com/ffd8/p5.glitch/examples/web/P5L_p5.glitch-almost-everything.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/pckumarhp) / [p5live](examples/p5live/P5L_p5.glitch-almost-everything.json)
+- image – [demo](examples/web/P5L_p5.glitch-image.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-image.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/wwo8xjaIt)
+ / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-image.json)
+- image-types – [demo](examples/web/P5L_p5.glitch-image-types.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-image-types.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/6_7JU6kI0)
+ / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-image-types.json)
+- buildimage-callback – [demo](examples/web/P5L_p5.glitch-buildimage-callback.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-buildimage-callback.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/OOeGitKMw) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-buildimage-callback.json)
+- webcam – [demo](examples/web/P5L_p5.glitch-webcam.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-webcam.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/5aew0QfB4) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-webcam.json)
+- video – [demo](examples/web/P5L_p5.glitch-video.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-video.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/6OfUZnw9d) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-video.json)
+- binary-font – [demo](examples/web/P5L_p5.glitch-binary-font.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-binary-font.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/FHdpg_tt9) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-binary-font.json)
+- almost-everything – [demo](examples/web/P5L_p5.glitch-almost-everything.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-almost-everything.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/pckumarhp) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-almost-everything.json)
 
 
 ## Installation
