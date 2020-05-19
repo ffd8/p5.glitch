@@ -32,6 +32,12 @@ Here are a few examples to get you going:
 
 Download [`p5.glitch.js`](p5.glitch.js) and include with your p5.js sketch's index.html file.  
 
+Load remotely via [jsdelivr CDN](https://cdn.jsdelivr.net/npm/p5.glitch@0.1.0/p5.glitch.js):
+
+```javascript
+<script src="https://cdn.jsdelivr.net/npm/p5.glitch@0.1.0/p5.glitch.js
+"></script>
+```
 
 ## Usage
 p5.glitch is a `class`, so after an instance has been attached to a variable, you'll need to use that prefix in front of every function listed below, ie: `glitch.loadImage()`. This enables you to have multiple glitches running parallel. 
