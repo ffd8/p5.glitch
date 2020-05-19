@@ -1,0 +1,32 @@
+{
+  "name": "p5.glitch",
+  "version": "0.1.0",
+  "description": "p5.js library for glitching images and binary files",
+  "main": "p5.glitch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ffd8/p5.glitch"
+  },
+  "keywords": [
+    "p5js",
+    "p5",
+    "processing",
+    "glitch",
+    "glitching",
+    "manipulation",
+    "data-bending",
+    "data-moshing",
+    "image",
+    "data",
+    "base64"
+  ],
+  "author": "Ted Davis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ffd8/p5.glitch/issues"
+  },
+  "homepage": "https://github.com/ffd8/p5.glitch#readme"
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>p5.glitch-video</title>
+	<meta charset="utf-8">
+	<!-- Compiled w/ P5LIVE, http://github.com/ffd8/p5live -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/addons/p5.sound.min.js"></script>
+	<style type="text/css">
+		body{
+			margin:0;
+			overflow:hidden;
+		}
+		canvas{
+			position:fixed;
+			top:0;
+			left:0;
+			z-index:-1;
+			width:100vw;
+			height:100vh;
+			margin:0;
+		}
+	</style>
+	<script type="text/javascript">
+		// eco-mode = only render if window focused
+		window.onblur = function () {
+			noLoop()
+		}
+		window.onfocus = function () {
+			loop();
+		}
+	</script>
+<script type="text/javascript" src="includes/libs/p5.glitch.js"></script>
+
+<script type="text/javascript">
+//p5.glitch-video
+
+// p5.glitch-video
+// cc teddavis.org 2020
+
+let libs = ["includes/libs/p5.glitch.js"];
+
+let glitch, vid, rPosition = 1000;
+
+function preload() {
+	vid = createVideo('includes/demos-data/videos/big_buck_bunny.mp4', function() {
+		vid.hide();
+		vid.volume(0);
+		vid.loop();
+	});
+}
+
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+
+	background(0);
+	imageMode(CENTER);
+
+	glitch = new Glitch();
+	glitch.pixelate(1);
+}
+
+function draw() {
+	background(0);
+
+	// one per second, set single random byte position
+	if(frameCount % 60 === 0) {
+		rPosition = random(glitch.bytes.length);
+	}
+
+	if(frameCount % 3 === 0) {
+
+		if(!mouseIsPressed) {
+			glitch.loadImage(vid);
+		}
+
+		glitch.randomByte(rPosition); // single randome byte
+		glitch.limitBytes(.78); // limit bytes to branch
+		glitch.randomBytes(10, 2); // set 10 random bytes
+		glitch.buildImage();
+	}
+
+	image(glitch.image, width / 2, height / 2)
+}
+
+/* CUSTOM FUNCTIONS FOR P5LIVE */
+// keep fullscreen if window resized
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight);
+}
+
+// custom ease function
+function ease(iVal, oVal, eVal){
+	return oVal += (iVal - oVal) * eVal;
+}
+
+// processing compatibility
+function println(msg){
+	print(msg);
+}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

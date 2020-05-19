@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>p5.glitch-almost-everything</title>
+	<meta charset="utf-8">
+	<!-- Compiled w/ P5LIVE, http://github.com/ffd8/p5live -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
+	<style type="text/css">
+		body{
+			margin:0;
+			overflow:hidden;
+			background:#000;
+		}
+		canvas{
+			position:fixed;
+			top:0;
+			left:0;
+			z-index:-1;
+			width:100vw;
+			height:100vh;
+			margin:0;
+		}
+	</style>
+	<script type="text/javascript">
+		// eco-mode = only render if window focused
+		window.onblur = function () {
+			noLoop()
+		}
+		window.onfocus = function () {
+			loop();
+		}
+	</script>
+<script type="text/javascript" src="includes/libs/p5.glitch.js"></script>
+
+<script type="text/javascript">
+// p5.glitch-almost-everything
+// cc teddavis.org 2020
+
+let glitch;
+let fishPath = 'includes/demos-data/images/fish.png';
+
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+	background(0);
+	imageMode(CENTER);
+
+	glitch = new Glitch();
+	// glitch.debug(); // debug info
+
+	glitch.pixelate(.8); // hard pixels
+	// glitch.errors(false); // no error messages
+
+	// test loadBytes w/ callback
+	glitch.loadBytes(fishPath, function() {
+		glitch.randomBytes(50); // 50 random bytes
+		// glitch.saveBytes('fish_glitch.png'); // toggle saveBytes()
+	});
+
+	glitch.loadType('jpg');
+	glitch.loadQuality(.96)
+
+	glitch.loadImage(fishPath); // glitch loadImage()
+	loadImage(fishPath, function(img) {
+		glitch.loadImage(img); // from p5.js loadImage()
+	});
+
+	glitch.debug(false); // turn off before draw()!
+}
+
+function draw() {
+	glitch.resetBytes(); // fresh bytes
+	glitch.limitBytes(.4, .8) // limit bytes
+	glitch.randomByte(52) // single random
+	glitch.randomBytes(5) // 5 random
+	glitch.randomBytes(5, 150) // 5 random pos, exact val
+	glitch.replaceByte(53, 255); // single replace
+	glitch.replaceBytes(123, '7c'); // all replace
+	glitch.replaceHex('ffdb00430101', 'ffdb00430155');
+	glitch.swapBytes(88, 100); // swap values
+	glitch.buildImage();
+	image(glitch.image, width / 2, height / 2)
+}
+
+function keyPressed() {
+	if(key === 'I') { // image raw
+		glitch.saveImage('fish_glitched');
+	} else if(key === 'S') { // image safe
+		glitch.saveSafe('fish_glitched');
+	} else if(key === 'C') { // canvas
+		glitch.saveCanvas('fish_glitched');
+	}
+}
+
+/* CUSTOM FUNCTIONS FOR P5LIVE */
+// keep fullscreen if window resized
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight);
+}
+
+// custom ease function
+function ease(iVal, oVal, eVal){
+	return oVal += (iVal - oVal) * eVal;
+}
+
+// processing compatibility
+function println(msg){
+	print(msg);
+}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

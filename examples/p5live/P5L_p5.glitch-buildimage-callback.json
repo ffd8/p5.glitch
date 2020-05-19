@@ -1,0 +1,17 @@
+{
+  "version": "1.3.2",
+  "revision": 36,
+  "count": {
+    "sketches": 1,
+    "folders": 0
+  },
+  "structure": [
+    {
+      "name": "p5.glitch-buildimage-callback",
+      "mod": "1589925979312",
+      "type": "sketch",
+      "parent": "glitch.p5-demos",
+      "code": "// p5.glitch-buildImage-callback\n// cc teddavis.org 2020\n\nlet libs = [\"includes/libs/p5.glitch.js\"];\n\nlet glitch;\n\nfunction setup() {\n\tcreateCanvas(windowWidth, windowHeight);\n\t\n\tglitch = new Glitch();\n\tglitch.loadType('jpg')\n\tglitch.loadImage('includes/demos-data/images/fish.png')\n\timageMode(CENTER)\n}\n\nfunction draw() {\n\tglitch.resetBytes(); // reset bytes to original each draw cycle\n\n\t// see w/ 10 random bytes\n\tglitch.randomBytes(10);\n\tglitch.buildImage(function(img) {\n\t\tbackground(0); // background on demand of first image ready\n\t\timage(img, width / 2, height * .25)\n\t});\n\n\n\t// see w/ additional 100 random bytes\n\tglitch.randomBytes(100);\n\tglitch.buildImage(function(img) {\n\t\timage(img, width / 2, height * .5)\n\t});\n\n\t// reset + swap hex strings\n\tglitch.resetBytes();\n\tglitch.replaceHex('ffdb00430001', 'ffdb004300ff');\n\tglitch.buildImage(function(img) {\n\t\timage(img, width / 2, height * .75)\n\t});\n\n}"
+    }
+  ]
+}

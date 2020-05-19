@@ -1,0 +1,17 @@
+{
+  "version": "1.3.2",
+  "revision": 36,
+  "count": {
+    "sketches": 1,
+    "folders": 0
+  },
+  "structure": [
+    {
+      "name": "p5.glitch-almost-everything",
+      "mod": "1589925983715",
+      "type": "sketch",
+      "parent": "glitch.p5-demos",
+      "code": "// p5.glitch-almost-everything\n// cc teddavis.org 2020\n\nlet libs = [\"includes/libs/p5.glitch.js\"];\n\nlet glitch;\nlet fishPath = 'includes/demos-data/images/fish.png';\n\nfunction setup() {\n\tcreateCanvas(windowWidth, windowHeight);\n\tbackground(0);\n\timageMode(CENTER);\n\n\tglitch = new Glitch();\n\t// glitch.debug(); // debug info\n\n\tglitch.pixelate(.8); // hard pixels\n\t// glitch.errors(false); // no error messages\n\n\t// test loadBytes w/ callback\n\tglitch.loadBytes(fishPath, function() {\n\t\tglitch.randomBytes(50); // 50 random bytes\n\t\t// glitch.saveBytes('fish_glitch.png'); // toggle saveBytes()\n\t});\n\n\tglitch.loadType('jpg');\n\tglitch.loadQuality(.96)\n\n\tglitch.loadImage(fishPath); // glitch loadImage()\n\tloadImage(fishPath, function(img) {\n\t\tglitch.loadImage(img); // from p5.js loadImage()\n\t});\n\n\tglitch.debug(false); // turn off before draw()!\n}\n\nfunction draw() {\n\tglitch.resetBytes(); // fresh bytes\n\tglitch.limitBytes(.4, .8) // limit bytes\n\tglitch.randomByte(52) // single random\n\tglitch.randomBytes(5) // 5 random\n\tglitch.randomBytes(5, 150) // 5 random pos, exact val\n\tglitch.replaceByte(53, 255); // single replace\n\tglitch.replaceBytes(123, '7c'); // all replace\n\tglitch.replaceHex('ffdb00430101', 'ffdb00430155');\n\tglitch.swapBytes(88, 100); // swap values\n\tglitch.buildImage();\n\timage(glitch.image, width / 2, height / 2)\n}\n\nfunction keyPressed() {\n\tif(key === 'I') { // image raw\n\t\tglitch.saveImage('fish_glitched');\n\t} else if(key === 'S') { // image safe\n\t\tglitch.saveSafe('fish_glitched');\n\t} else if(key === 'C') { // canvas\n\t\tglitch.saveCanvas('fish_glitched');\n\t}\n}"
+    }
+  ]
+}

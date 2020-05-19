@@ -1,0 +1,17 @@
+{
+  "version": "1.3.2",
+  "revision": 36,
+  "count": {
+    "sketches": 1,
+    "folders": 0
+  },
+  "structure": [
+    {
+      "name": "p5.glitch-image-types",
+      "mod": 1589927612504,
+      "type": "sketch",
+      "parent": "glitch.p5-demos",
+      "code": "// p5.glitch-image-types\n// cc teddavis.org 2020\n\nlet libs = [\"includes/libs/p5.glitch.js\"];\n\nlet glitch, typeCounter = 0;\n\nfunction setup() {\n\tcreateCanvas(windowWidth, windowHeight);\n\tbackground(0);\n\timageMode(CENTER);\n\n\tglitch = new Glitch();\n\tsetupGlitch(); // load image w/ random type\n}\n\nfunction draw() {\n\tglitch.resetBytes();\n\n\tglitch.randomBytes(1); // add one random byte for movement\n\n\tglitch.buildImage(function() {\n\t\tbackground(0); // clear background once image is ready\n\t\tdisplayType(); // show text\n\t});\n\timage(glitch.image, width / 2, height / 2)\n}\n\nfunction mousePressed() {\n\ttypeCounter++;\n\tsetupGlitch(); // grab another random format\n}\n\nfunction setupGlitch() {\n\tloadImage('includes/demos-data/images/fish.png', function(im) {\n\t\tglitch.loadType(glitch.types[typeCounter%glitch.types.length]); // use random type\n\t\tglitch.loadImage(im);\n\t});\n}\n\nfunction displayType() {\n\tfill(255);\n\ttextAlign(CENTER, CENTER);\n\ttextSize(20);\n\ttext('press mouse to walkthrough image types \\n' + glitch.types[typeCounter%glitch.types.length], 0, 0, width, height/2);\n}"
+    }
+  ]
+}

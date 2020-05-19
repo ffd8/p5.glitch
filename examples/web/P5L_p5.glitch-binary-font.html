@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>p5.glitch-binary-font</title>
+	<meta charset="utf-8">
+	<!-- Compiled w/ P5LIVE, http://github.com/ffd8/p5live -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/addons/p5.sound.min.js"></script>
+	<style type="text/css">
+		body{
+			margin:0;
+			overflow:hidden;
+		}
+		canvas{
+			position:fixed;
+			top:0;
+			left:0;
+			z-index:-1;
+			width:100vw;
+			height:100vh;
+			margin:0;
+		}
+	</style>
+	<script type="text/javascript">
+		// eco-mode = only render if window focused
+		window.onblur = function () {
+			noLoop()
+		}
+		window.onfocus = function () {
+			loop();
+		}
+	</script>
+<script type="text/javascript" src="includes/libs/p5.glitch.js"></script>
+
+<script type="text/javascript">
+//p5.glitch-binary-font
+
+// p5.glitch-binary-font
+// cc teddavis.org 2020
+
+let libs = ["includes/libs/p5.glitch.js"];
+
+let glitch;
+
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+
+	glitch = new Glitch();
+	glitch.debug();
+	glitch.loadBytes('includes/demos-data/fonts/RobotoMono-Light.otf', function(){
+		glitch.limitBytes(0.3, 0.8);
+		glitch.randomBytes(3000);
+	});
+	
+	background(0);
+	fill(255);
+	textAlign(CENTER, CENTER);
+	textSize(50);
+	text('press \nS \nto save \n[glitched font binary!]', 0, 0, width, height*.7);
+}
+
+
+function keyPressed() {
+	if(key == 'S') {
+		glitch.saveBytes('RobotoMono-Light_glitched.otf');
+	}
+}
+
+
+/* CUSTOM FUNCTIONS FOR P5LIVE */
+// keep fullscreen if window resized
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight);
+}
+
+// custom ease function
+function ease(iVal, oVal, eVal){
+	return oVal += (iVal - oVal) * eVal;
+}
+
+// processing compatibility
+function println(msg){
+	print(msg);
+}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

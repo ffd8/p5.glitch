@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>p5.glitch-buildimage-callback</title>
+	<meta charset="utf-8">
+	<!-- Compiled w/ P5LIVE, http://github.com/ffd8/p5live -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
+	<style type="text/css">
+		body{
+			margin:0;
+			overflow:hidden;
+			background:#000;
+		}
+		canvas{
+			position:fixed;
+			top:0;
+			left:0;
+			z-index:-1;
+			width:100vw;
+			height:100vh;
+			margin:0;
+		}
+	</style>
+	<script type="text/javascript">
+		// eco-mode = only render if window focused
+		window.onblur = function () {
+			noLoop()
+		}
+		window.onfocus = function () {
+			loop();
+		}
+	</script>
+<script type="text/javascript" src="includes/libs/p5.glitch.js"></script>
+
+<script type="text/javascript">
+// p5.glitch-buildImage-callback
+// cc teddavis.org 2020
+
+let glitch;
+
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+
+	glitch = new Glitch();
+	glitch.loadType('jpg')
+	glitch.loadImage('includes/demos-data/images/fish.png')
+	imageMode(CENTER)
+}
+
+function draw() {
+	glitch.resetBytes(); // reset bytes to original each draw cycle
+
+	// see w/ 10 random bytes
+	glitch.randomBytes(10);
+	glitch.buildImage(function(img) {
+		background(0); // background on demand of first image ready
+		image(img, width / 2, height * .25)
+	});
+
+
+	// see w/ additional 100 random bytes
+	glitch.randomBytes(100);
+	glitch.buildImage(function(img) {
+		image(img, width / 2, height * .5)
+	});
+
+	// reset + swap hex strings
+	glitch.resetBytes();
+	glitch.replaceHex('ffdb00430001', 'ffdb004300ff');
+	glitch.buildImage(function(img) {
+		image(img, width / 2, height * .75)
+	});
+
+}
+
+/* CUSTOM FUNCTIONS FOR P5LIVE */
+// keep fullscreen if window resized
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight);
+}
+
+// custom ease function
+function ease(iVal, oVal, eVal){
+	return oVal += (iVal - oVal) * eVal;
+}
+
+// processing compatibility
+function println(msg){
+	print(msg);
+}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

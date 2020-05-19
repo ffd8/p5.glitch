@@ -1,0 +1,17 @@
+{
+  "version": "1.3.2",
+  "revision": 36,
+  "count": {
+    "sketches": 1,
+    "folders": 0
+  },
+  "structure": [
+    {
+      "name": "p5.glitch-image",
+      "mod": "1589925959371",
+      "type": "sketch",
+      "parent": "glitch.p5-demos",
+      "code": "// p5.glitch-image\n// cc teddavis.org 2020\n\nlet libs = [\"includes/libs/p5.glitch.js\"];\n\nlet glitch;\n\nfunction setup() {\n\tcreateCanvas(windowWidth, windowHeight);\n\tbackground(0);\n\timageMode(CENTER);\n\n\tglitch = new Glitch();\n\tloadImage('includes/demos-data/images/fish.png', function(im){\n\t\tglitch.loadImage(im);\n\t});\n}\n\nfunction draw() {\n\tglitch.resetBytes();\n\n\tglitch.replaceBytes(100, 104); // swap all decimal byte 100 for 104\n\tglitch.randomBytes(1); // add one random byte for movement\n\n\tglitch.buildImage();\n\timage(glitch.image, width/2, height/2)\n}"
+    }
+  ]
+}
