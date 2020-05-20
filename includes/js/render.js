@@ -15,9 +15,11 @@
   };
 
   function display(xhr) {
+
     var parsed = reader.parse(xhr.responseText);
     var content = writer.renderBlock(parsed);
     var randomBG = '<div id="glitchbg" style="background-image:url(\'includes/backgrounds/'+Math.floor(Math.random()*20)+'.gif\');"></div>';
+    randomBG += '<h2>Shoutout</h2><div>Many thanks to <a href="https://glitch.com/@ohiofi" target="_blank">@ohiofi</a> for this fitting glitch.me subdomain!</div>';
     document.getElementsByTagName('body')[0].innerHTML = content + randomBG;
 
     // fix anchors
