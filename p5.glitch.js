@@ -1,12 +1,14 @@
-// p5.glitch v0.1.2
-// cc teddavis.org 2020
+// p5.glitch v0.1.3
+// cc teddavis.org 2021
 
 class Glitch{
-	constructor(){
+	constructor(instance){
+		if(instance !== undefined) this.p5 = instance;
+		else this.p5 = p5.instance;
 		this.mode = 'image';
 		this.width = 1;
 		this.height = 1;
-		this.image = createImage(1, 1);
+		this.image = this.p5.createImage(1, 1);
 		this.bytes = [];
 		this.bytesGlitched = [];
 		this.hex = [];
@@ -32,7 +34,7 @@ class Glitch{
 	loadBytes(bytes, callback){
 		this.debugMsg('p5.glitch - loadBytes()...');
 		if(typeof bytes === 'string'){
-			loadBytes(bytes, loadedBytes => {
+			this.p5.loadBytes(bytes, loadedBytes => {
 				this.parseBytes(loadedBytes.bytes, callback);
 			}, function(){this.errorMsg('p5.glitch - error loading bytes');}.bind(this));
 		}else if(typeof bytes === 'object' && bytes.hasOwnProperty('bytes') && bytes.bytes.length > 0){
@@ -140,7 +142,7 @@ class Glitch{
 	loadImage(img, callback){
 		this.debugMsg('p5.glitch - loadImage()...');
 		if(typeof img === 'string'){
-			loadImage(img, im => {
+			this.p5.loadImage(img, im => {
 				this.parseImage(im, callback);
 			}, function(){this.errorMsg('p5.glitch - error loading image');}.bind(this));
 		}else if(img.hasOwnProperty('width') && img.width > 0){
@@ -154,7 +156,7 @@ class Glitch{
 	parseImage(img, callback){
 		this.debugMsg('p5.glitch - parseImage()...');
 		this.mode = 'image';
-		let grabimg = img.get();
+		let grabimg = img.get(); // *** instance issue
 		let dataimg = grabimg.canvas.toDataURL(this.fileType, this.fileQuality).split(',');
 		this.fileFormat = this.fileType.split('/')[1];
 		this.base64Type = dataimg[0];
@@ -172,7 +174,7 @@ class Glitch{
 	// updates width + height for auto scaling image to canvas
 	scaleImage(img){
 		let scl = 1;
-		if(height >= width || abs(height-width) < 5) {
+		if(height >= width || this.p5.abs(height-width) < 5) {
 			scl = height / img.height;
 		} else {
 			scl = width / img.width;
@@ -184,7 +186,7 @@ class Glitch{
 	// recompile image based on glitched bytes
 	buildImage(callback){
 		if(this.mode === 'image' && this.base64Type !== '' && this.base64Glitched !== ''){
-			loadImage(this.base64Type + ', ' + this.base64Glitched, img => {
+			this.p5.loadImage(this.base64Type + ', ' + this.base64Glitched, img => {
 				this.scaleImage(img);
 				this.image = img.get();
 				if(typeof callback == 'function' && callback !== undefined){
@@ -202,7 +204,7 @@ class Glitch{
 				fileName = fileName + '_' + this.timeStamp();
 			}
 
-			glitch.image.save(fileName +'.'+ this.fileFormat);
+			glitch.image.save(fileName +'.'+ this.fileFormat); // *** instance issue
 			this.debugMsg('p5.glitch - image downloaded');
 		}
 	}
@@ -219,8 +221,8 @@ class Glitch{
 				fileType = 'jpg';
 			}
 
-			let imgSafe = glitch.image.get();
-			imgSafe.save(fileName +'_safe.'+ fileType);
+			let imgSafe = glitch.image.get(); // *** instance issue
+			imgSafe.save(fileName +'_safe.'+ fileType); // *** instance issue
 			this.debugMsg('p5.glitch - safe image downloaded');
 		}
 	}
@@ -237,7 +239,7 @@ class Glitch{
 				fileType = 'jpg';
 			}
 
-			save(fileName + '_canvas.' + fileType);
+			this.p5.save(fileName + '_canvas.' + fileType);
 			this.debugMsg('p5.glitch - canvas downloaded');
 		}
 	}
@@ -255,8 +257,8 @@ class Glitch{
 
 	// limit glitching to percentage of file
 	limitBytes(limitStart = 0.2, limitStop = 1.0){
-		this.limitStart = constrain(limitStart, 0.0, 1.0);
-		this.limitStop = constrain(limitStop, this.limitStart, 1.0);
+		this.limitStart = this.p5.constrain(limitStart, 0.0, 1.0);
+		this.limitStop = this.p5.constrain(limitStop, this.limitStart, 1.0);
 		this.debugMsg('p5.glitch - limitStart: ' + limitStart + '/ limitStop: ' + limitStop);
 	}
 
@@ -293,9 +295,9 @@ class Glitch{
 			if(replaceVal !== undefined){
 				replaceVal = this.parseByte(replaceVal);
 			}else{
-				replaceVal = this.parseByte(random(255));
+				replaceVal = this.parseByte(this.p5.random(255));
 			}
-			let randomPos = floor(random(newData.length * this.limitStart, newData.length * this.limitStop));
+			let randomPos = this.p5.floor(this.p5.random(newData.length * this.limitStart, newData.length * this.limitStop));
 			newData[randomPos] = replaceVal;
 		}
 
@@ -319,8 +321,8 @@ class Glitch{
 		findVal = this.parseByte(findVal);
 		replaceVal = this.parseByte(replaceVal);
 
-		let iStart = floor(newData.length * this.limitStart);
-		let iStop = floor(newData.length * this.limitStop);
+		let iStart = this.p5.floor(newData.length * this.limitStart);
+		let iStop = this.p5.floor(newData.length * this.limitStop);
 		for(let i = iStart; i < iStop; i++){
 			if(newData[i] === findVal){
 				newData[i] = replaceVal;
@@ -349,8 +351,8 @@ class Glitch{
 		aByte = this.parseByte(aByte);
 		bByte = this.parseByte(bByte);
 
-		let iStart = floor(newData.length * this.limitStart);
-		let iStop = floor(newData.length * this.limitStop);
+		let iStart = this.p5.floor(newData.length * this.limitStart);
+		let iStop = this.p5.floor(newData.length * this.limitStop);
 		for(let i = iStart; i < iStop; i++){
 			if(newData[i] === aByte){
 				newData[i] = bByte;
@@ -379,7 +381,7 @@ class Glitch{
 			bytesLength = bytes.length;
 		}
 
-		newPos = floor(constrain(newPos, 0, bytesLength));
+		newPos = this.p5.floor(this.p5.constrain(newPos, 0, bytesLength));
 		return newPos;
 	}
 
@@ -388,7 +390,7 @@ class Glitch{
 		if(typeof newVal === 'string'){
 			newVal = parseInt(newVal, 16);
 		}else if(!isNaN(newVal)){
-			newVal = floor(constrain(newVal, 0, 255));
+			newVal = this.p5.floor(this.p5.constrain(newVal, 0, 255));
 		}
 		return newVal;
 	}
@@ -399,10 +401,10 @@ class Glitch{
 
 	// hard (nearest neighbor) pixels, optionally scale canvas (only use in setup)
 	pixelate(newDensity = 1){
-		newDensity = constrain(newDensity, 0.0, displayDensity());
-		pixelDensity(newDensity);
+		newDensity = this.p5.constrain(newDensity, 0.0, this.p5.displayDensity());
+		this.p5.pixelDensity(newDensity);
 		document.body.style.imageRendering = "pixelated";
-		noSmooth();
+		this.p5.noSmooth();
 		this.debugMsg('p5.glitch - pixelate density: ' + newDensity);
 	}
 
