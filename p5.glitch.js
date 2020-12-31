@@ -134,7 +134,7 @@ class Glitch{
 
 	// set loaded image quality (only relevant for jpeg or webp)
 	loadQuality(newQuality){
-		this.fileQuality = constrain(newQuality, 0, 1);
+		this.fileQuality = this.p5.constrain(newQuality, 0, 1);
 		this.debugMsg('p5.glitch - loadQuality: '+this.fileQuality);
 	}
 
@@ -156,7 +156,7 @@ class Glitch{
 	parseImage(img, callback){
 		this.debugMsg('p5.glitch - parseImage()...');
 		this.mode = 'image';
-		let grabimg = img.get(); // *** instance issue
+		let grabimg = img.get();
 		let dataimg = grabimg.canvas.toDataURL(this.fileType, this.fileQuality).split(',');
 		this.fileFormat = this.fileType.split('/')[1];
 		this.base64Type = dataimg[0];
@@ -174,10 +174,10 @@ class Glitch{
 	// updates width + height for auto scaling image to canvas
 	scaleImage(img){
 		let scl = 1;
-		if(height >= width || this.p5.abs(height-width) < 5) {
-			scl = height / img.height;
+		if(this.p5.height >= this.p5.width || this.p5.abs(this.p5.height - this.p5.width) < 5) {
+			scl = this.p5.height / img.height;
 		} else {
-			scl = width / img.width;
+			scl = this.p5.width / img.width;
 		}
 		this.width = img.width * scl;
 		this.height = img.height * scl;
@@ -204,7 +204,7 @@ class Glitch{
 				fileName = fileName + '_' + this.timeStamp();
 			}
 
-			glitch.image.save(fileName +'.'+ this.fileFormat); // *** instance issue
+			this.image.save(fileName +'.'+ this.fileFormat);
 			this.debugMsg('p5.glitch - image downloaded');
 		}
 	}
@@ -221,8 +221,8 @@ class Glitch{
 				fileType = 'jpg';
 			}
 
-			let imgSafe = glitch.image.get(); // *** instance issue
-			imgSafe.save(fileName +'_safe.'+ fileType); // *** instance issue
+			let imgSafe = this.image.get();
+			imgSafe.save(fileName +'_safe.'+ fileType);
 			this.debugMsg('p5.glitch - safe image downloaded');
 		}
 	}
