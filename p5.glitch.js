@@ -170,7 +170,7 @@ class Glitch{
 	}
 
 	// updates width + height for auto scaling image to canvas
-	imageScale(img){
+	scaleImage(img){
 		let scl = 1;
 		if(height >= width || abs(height-width) < 5) {
 			scl = height / img.height;
@@ -185,7 +185,7 @@ class Glitch{
 	buildImage(callback){
 		if(this.mode === 'image' && this.base64Type !== '' && this.base64Glitched !== ''){
 			loadImage(this.base64Type + ', ' + this.base64Glitched, img => {
-				this.imageScale(img);
+				this.scaleImage(img);
 				this.image = img.get();
 				if(typeof callback == 'function' && callback !== undefined){
 					callback(img);
