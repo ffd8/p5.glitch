@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>p5.glitch-instance</title>
+	<meta charset="utf-8">
+	<!-- Compiled w/ P5LIVE, http://github.com/ffd8/p5live -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.3.0/lib/p5.min.js"></script>
+	<style type="text/css">
+		body{
+			margin:0;
+			overflow:hidden;
+			background:#000;
+		}
+		.p5sketch{
+			width:500px;
+			height:200px;
+			border:1px solid #fff;
+			margin:15px;
+		}
+	</style>
+<script type="text/javascript" src="includes/libs/p5.glitch.js"></script>
+
+<script type="text/javascript">
+	// p5.glitch-instance
+	// cc teddavis.org 2021
+
+	let src = 'includes/demos-data/images/fish.png';
+
+	function buildSketch(elm, type){
+		let parent = document.getElementById(elm);
+		new p5( function(sketch){
+			sketch.glitch;
+
+			sketch.setup = () => {
+				let cvn = sketch.createCanvas(500, 200);
+				sketch.glitch = new Glitch(sketch);
+				sketch.glitch.loadType(type);
+				sketch.glitch.loadQuality(sketch.random(.4, .9));
+				sketch.glitch.loadImage(src, function(){
+					sketch.glitched();
+				});
+				cvn.mouseMoved(sketch.glitched);
+				sketch.glitch.errors(false);
+				sketch.disableFriendlyErrors = true;
+			};
+
+			sketch.glitched = () => {
+				sketch.glitch.resetBytes();
+				sketch.glitch.randomBytes(15); // randomize 10 bytes
+				sketch.glitch.buildImage(function(){
+					sketch.image(sketch.glitch.image, 0, 0, sketch.width, sketch.height);
+				});
+			}
+		}, parent);
+	}
+
+</script>
+
+</head>
+<body>
+	<div id="sketch1" class="p5sketch"></div>
+	<div id="sketch2" class="p5sketch"></div>
+	<div id="sketch3" class="p5sketch"></div>
+
+	<script>
+		buildSketch('sketch1', 'jpg')
+		buildSketch('sketch2', 'png')
+		buildSketch('sketch3', 'webp')
+	</script>
+</body>
+</html>
