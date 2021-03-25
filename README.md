@@ -1,7 +1,7 @@
 # p5.glitch
 
 p5.js library for glitching images and binary files.  
-cc [teddavis.org](https://teddavis.org) 2020
+cc [teddavis.org](https://teddavis.org) 2020 –
 
 ![p5.glitch logo animated](https://raw.githubusercontent.com/ffd8/p5.glitch/master/includes/images/p5.glitch_ani.gif)
 
@@ -17,20 +17,21 @@ cc [teddavis.org](https://teddavis.org) 2020
 ## Examples
 Here are a few examples to get you going:
 
-- image – [demo](examples/web/P5L_p5.glitch-image.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-image.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/wwo8xjaIt)
+- image – [demo](https://p5.glitch.me/examples/web/P5L_p5.glitch-image.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-image.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/wwo8xjaIt)
  / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-image.json)
-- image-types – [demo](examples/web/P5L_p5.glitch-image-types.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-image-types.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/6_7JU6kI0)
+- image-types – [demo](https://p5.glitch.me/examples/web/P5L_p5.glitch-image-types.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-image-types.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/6_7JU6kI0)
  / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-image-types.json)
-- buildimage-callback – [demo](examples/web/P5L_p5.glitch-buildimage-callback.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-buildimage-callback.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/OOeGitKMw) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-buildimage-callback.json)
-- webcam – [demo](examples/web/P5L_p5.glitch-webcam.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-webcam.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/5aew0QfB4) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-webcam.json)
-- video – [demo](examples/web/P5L_p5.glitch-video.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-video.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/6OfUZnw9d) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-video.json)
-- binary-font – [demo](examples/web/P5L_p5.glitch-binary-font.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-binary-font.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/FHdpg_tt9) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-binary-font.json)
-- almost-everything – [demo](examples/web/P5L_p5.glitch-almost-everything.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-almost-everything.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/pckumarhp) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-almost-everything.json)
+- webcam – [demo](https://p5.glitch.me/examples/web/P5L_p5.glitch-webcam.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-webcam.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/5aew0QfB4) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-webcam.json)
+- video – [demo](https://p5.glitch.me/examples/web/P5L_p5.glitch-video.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-video.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/6OfUZnw9d) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-video.json)
+- binary-font – [demo](https://p5.glitch.me/examples/web/P5L_p5.glitch-binary-font.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-binary-font.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/FHdpg_tt9) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-binary-font.json)
+- almost-everything – [demo](https://p5.glitch.me/examples/web/P5L_p5.glitch-almost-everything.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-almost-everything.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/pckumarhp) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-almost-everything.json)
+- callback – [demo](https://p5.glitch.me/examples/web/P5L_p5.glitch-buildimage-callback.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-buildimage-callback.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/OOeGitKMw) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-buildimage-callback.json)
+- instance - [demo](https://p5.glitch.me/examples/web/P5L_p5.glitch-almost-instance.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-instance.html)
 
 
 ## Installation
-
 Download [`p5.glitch.js`](p5.glitch.js) and include with your p5.js sketch's index.html file.  
+Optionally clone/download the [GitHub Repo](https://github.com/ffd8/p5.glitch).  
 
 Load remotely via [jsdelivr CDN](https://cdn.jsdelivr.net/npm/p5.glitch@0.1.2/p5.glitch.js):
 
@@ -40,7 +41,7 @@ Load remotely via [jsdelivr CDN](https://cdn.jsdelivr.net/npm/p5.glitch@0.1.2/p5
 ```
 
 ## Usage
-p5.glitch is a `class`, so after an instance has been attached to a variable, you'll need to use that prefix in front of every function listed below, ie: `glitch.loadImage()`. This enables you to have multiple glitches running parallel. 
+p5.glitch is a `class`, so after an instance has been attached to a variable, you'll need to use that prefix in front of every function listed below, ie: `glitch.loadImage()`. This enables you to have multiple glitches running parallel. All examples below use `glitch` as the instance prefix.
 
 - [Setup](#setup)
 - [Images](#images)
@@ -65,6 +66,7 @@ function setup() {
 	// glitch.debug(false); // hide debug
 }
 ```
+See *instance* demo above for using with p5.js [instance mode](https://github.com/processing/p5.js/wiki/Global-and-instance-mode).
 
 ### Images  
 Images can be live previewed within your sketch and browser:
@@ -452,6 +454,7 @@ Occasionally you'll kill the image, producing a p5.js error in the console. If y
 
 ```javascript
 glitch.errors(false); // disable error logging
+p5.disableFriendlyErrors = true; // disable p5.js warnings about bad images
 ```
 
 ---
@@ -461,15 +464,15 @@ If you want to follow the progress of on-demand load/save bytes, enable `debug()
 
 ```javascript
 glitch.debug(); // activate debug
-glitch.debug(false); // disable debug
+glitch.debug(false); // disable debug (default)
 ```
 
 ---
 
 
 ## Contributing
-Interested in building additional glitch functions or finding a solution for p5.js instance mode? [Create an issue](https://github.com/ffd8/p5.glitch/issues) to discuss it followed by a PR. 
+Found a bug, missing feature, wanna chat? [Create an issue](https://github.com/ffd8/p5.glitch/issues) on GitHub. 
 
 
 ## License
-[mit](https://choosealicense.com/licenses/mit/)
+[MIT](https://choosealicense.com/licenses/mit/)
