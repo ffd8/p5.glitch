@@ -33,10 +33,10 @@ Here are a few examples to get you going:
 Download [`p5.glitch.js`](p5.glitch.js) and include with your p5.js sketch's index.html file.  
 Optionally clone/download the [GitHub Repo](https://github.com/ffd8/p5.glitch).  
 
-Load remotely via [jsdelivr CDN](https://cdn.jsdelivr.net/npm/p5.glitch@0.1.2/p5.glitch.js):
+Load remotely via [jsdelivr CDN](https://cdn.jsdelivr.net/npm/p5.glitch@latest/p5.glitch.js):
 
 ```javascript
-<script src="https://cdn.jsdelivr.net/npm/p5.glitch@0.1.2/p5.glitch.js
+<script src="https://cdn.jsdelivr.net/npm/p5.glitch@latest/p5.glitch.js
 "></script>
 ```
 
