@@ -53,7 +53,7 @@ function preload() {
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 
-	background(0);
+	background(255);
 	imageMode(CENTER);
 
 	glitch = new Glitch();
@@ -61,7 +61,7 @@ function setup() {
 }
 
 function draw() {
-	background(0);
+	background(255);
 
 	// one per second, set single random byte position
 	if(frameCount % 60 === 0) {
