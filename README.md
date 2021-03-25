@@ -26,7 +26,7 @@ Here are a few examples to get you going:
 - binary-font – [demo](https://p5.glitch.me/examples/web/P5L_p5.glitch-binary-font.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-binary-font.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/FHdpg_tt9) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-binary-font.json)
 - almost-everything – [demo](https://p5.glitch.me/examples/web/P5L_p5.glitch-almost-everything.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-almost-everything.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/pckumarhp) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-almost-everything.json)
 - callback – [demo](https://p5.glitch.me/examples/web/P5L_p5.glitch-buildimage-callback.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-buildimage-callback.html) / [editor.p5js](https://editor.p5js.org/ffd8/sketches/OOeGitKMw) / [p5live](https://github.com/ffd8/p5.glitch/blob/master/examples/p5live/P5L_p5.glitch-buildimage-callback.json)
-- instance - [demo](https://p5.glitch.me/examples/web/P5L_p5.glitch-almost-instance.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-instance.html)
+- instance - [demo](https://p5.glitch.me/examples/web/P5L_p5.glitch-instance.html) / [html](https://github.com/ffd8/p5.glitch/blob/master/examples/web/P5L_p5.glitch-instance.html)
 
 
 ## Installation
