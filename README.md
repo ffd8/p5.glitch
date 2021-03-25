@@ -36,8 +36,7 @@ Optionally clone/download the [GitHub Repo](https://github.com/ffd8/p5.glitch).
 Load remotely via [jsdelivr CDN](https://cdn.jsdelivr.net/npm/p5.glitch@latest/p5.glitch.js):
 
 ```javascript
-<script src="https://cdn.jsdelivr.net/npm/p5.glitch@latest/p5.glitch.js
-"></script>
+<script src="https://cdn.jsdelivr.net/npm/p5.glitch@latest/p5.glitch.js"></script>
 ```
 
 ## Usage
