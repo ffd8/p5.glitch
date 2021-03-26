@@ -9,13 +9,15 @@
 		body{
 			margin:0;
 			overflow:hidden;
-			background:#000;
+			background:#000022;
+			cursor:crosshair;
 		}
 		.p5sketch{
-			width:500px;
-			height:200px;
+			box-sizing: border-box;
+			width:98vw;
+			height:30vh;
 			border:1px solid #fff;
-			margin:15px;
+			margin:1vw;
 		}
 	</style>
 <script type="text/javascript" src="includes/libs/p5.glitch.js"></script>
@@ -24,6 +26,7 @@
 	// p5.glitch-instance
 	// cc teddavis.org 2021
 
+	let id = 0;
 	let src = 'includes/demos-data/images/fish.png';
 
 	function buildSketch(elm, type){
@@ -32,26 +35,38 @@
 			sketch.glitch;
 
 			sketch.setup = () => {
-				let cvn = sketch.createCanvas(500, 200);
+				let cvn = sketch.createCanvas(parent.offsetWidth-2, parent.offsetHeight-2);
 				sketch.glitch = new Glitch(sketch);
 				sketch.glitch.loadType(type);
-				sketch.glitch.loadQuality(sketch.random(.4, .9));
+				sketch.glitch.loadQuality(1.0);
 				sketch.glitch.loadImage(src, function(){
 					sketch.glitched();
 				});
 				cvn.mouseMoved(sketch.glitched);
 				sketch.glitch.errors(false);
 				sketch.disableFriendlyErrors = true;
+				sketch.imageMode(sketch.CENTER);
+				sketch.background(0, 0, 255);
+				sketch.frameCount = sketch.floor(sketch.random(9999));
+				sketch.rot = 0;
 			};
+
+			sketch.draw = () => {
+				sketch.x = sketch.width - sketch.frameCount * 2 % sketch.width;
+				sketch.y = sketch.height / 2 + sketch.sin(sketch.frameCount * 0.05) * sketch.height/4;
+				sketch.translate(sketch.x, sketch.y);
+				sketch.rotate(-sketch.radians(sketch.cos(sketch.frameCount*.05))*5);
+				sketch.image(sketch.glitch.image, 0, 0);
+			}
 
 			sketch.glitched = () => {
 				sketch.glitch.resetBytes();
 				sketch.glitch.randomBytes(15); // randomize 10 bytes
-				sketch.glitch.buildImage(function(){
-					sketch.image(sketch.glitch.image, 0, 0, sketch.width, sketch.height);
-				});
+				sketch.glitch.buildImage();
 			}
 		}, parent);
+
+		id++;
 	}
 
 </script>
