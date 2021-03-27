@@ -248,12 +248,12 @@ glitch.buildImage(function(img){
 ---
 
 #### saveImage( *[fileName]* )
-Downloads glitched image file from `bytesGlitched`.  
-Use custom **fileName** or defaults to **p5.glitch_timestamp**. Format extension used at `loadImage()` is automatically added to filename suffix.
+Downloads glitched image file from `bytesGlitched` (live glitch = software may reject it).  
+Use custom **fileName** or defaults to **p5.glitch_timestamp**. File format extension used during `loadImage()` is automatically added to filename suffix.
 
 ```javascript
-glitch.saveImage(); // saved as 'p5.glitch_######_######.jpg'
-glitch.saveImage('fish_glitched'); // saved as 'fish_glitched.jpg'
+glitch.saveImage(); // saved as 'p5.glitch_######_######.ext' (ext = format)
+glitch.saveImage('fish_glitched'); // saved as 'fish_glitched.ext' (ext = format)
 ```
 
 ---
@@ -263,8 +263,9 @@ Downloads a safe copy of the glitched `image`. While `saveImage()` still contain
 Use custom **fileName** or defaults to **p5.glitch_timestamp**. Add a custom **fileType** – accepts *jpg* or *png* is default for highest quality.
 
 ```javascript
-glitch.saveSafe(); // saved as 'p5.glitch_######_######.jpg'
-glitch.saveSafe('fish_glitched'); // saved as 'fish_glitched.jpg'
+glitch.saveSafe(); // saved as 'p5.glitch_######_######_safe.png'
+glitch.saveSafe('fish_glitched'); // saved as 'fish_glitched_safe.png'
+glitch.saveSafe('fish_glitched', 'jpg'); // saved as 'fish_glitched_safe.jpg'
 ```
 
 ---
