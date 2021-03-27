@@ -263,8 +263,8 @@ Downloads a safe copy of the glitched `image`. While `saveImage()` still contain
 Use custom **fileName** or defaults to **p5.glitch_timestamp**. Add a custom **fileType** – accepts *jpg* or *png* is default for highest quality.
 
 ```javascript
-glitch.saveImage(); // saved as 'p5.glitch_######_######.jpg'
-glitch.saveImage('fish_glitched'); // saved as 'fish_glitched.jpg'
+glitch.saveSafe(); // saved as 'p5.glitch_######_######.jpg'
+glitch.saveSafe('fish_glitched'); // saved as 'fish_glitched.jpg'
 ```
 
 ---
