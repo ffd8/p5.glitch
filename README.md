@@ -78,7 +78,7 @@ glitch.loadImage('data/images/fish.png'); // load image by path
 // glitch.loadImage(capture); // load existing p5.js image
 
 /* reset bytes */
-// glitch.reset(); // reset glitch to original bytes if loaded in setup
+// glitch.resetBytes(); // reset glitch to original bytes if loaded in setup
  
 /* sample glitching functions */
 glitch.randomBytes(10); // randomize 10 bytes
