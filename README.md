@@ -192,9 +192,9 @@ Sets the **quality** when converting loaded image to base64/bytes.
 Only available for **jpeg** and **webp**. Number between 0.0 – 1.0
 
 ```javascript
-glitch.loadType('image/png'); // complete type as processed
-glitch.loadType('png'); // same as above, 'image/' inserted if missing
-glitch.loadType(random(glitch.types)); // load random available type
+glitch.loadQuality(1.0); // set hi-quality
+glitch.loadQuality(0.01); // set extremely low-quality
+glitch.loadQuality(random(0.01, 1.0); // set random quality
 
 // used before glitch.loadImage()
 ```
