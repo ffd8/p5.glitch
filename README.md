@@ -1,7 +1,7 @@
 # p5.glitch
 
 p5.js library for glitching images and binary files in the web browser.  
-cc [teddavis.org](https://teddavis.org) 2020 –
+cc [teddavis.org](https://teddavis.org) 2020 –  
 
 ![p5.glitch logo animated](https://raw.githubusercontent.com/ffd8/p5.glitch/master/includes/images/p5.glitch_ani.gif)
 
@@ -476,10 +476,10 @@ Found a bug, missing feature, wanna chat? Have you created a project with p5.gli
 [Create an issue](https://github.com/ffd8/p5.glitch/issues) on GitHub. 
 
 ## In the Wild
-- [glitch.ext @ HeK Net Works, March 2021](https://www.hek.ch/projekte/hek-net-works/ted-davis-glitch-ext-09-03-2021/) + [video docu](https://www.youtube.com/watch?v=8bRTGsEjlzY)
+- [glitch.ext @ HeK Net Works, March 2021](https://www.hek.ch/projekte/hek-net-works/ted-davis-glitch-ext-09-03-2021/) + [documentation](https://www.youtube.com/watch?v=8bRTGsEjlzY)
 - [glitch.ext @ Chromium Extension](https://github.com/ffd8/glitch.ext)
 
-[![p5.glitch 2021 Basel Media Art Nomination](https://raw.githubusercontent.com/ffd8/p5.glitch/master/includes/images/BFP.Laurel_Medienkunstpreis_Nominiert2021_glitch.png?raw=true)](https://www.kultur.bs.ch/kulturprojekte/film-und-medienkunst/preisvergaben.html)
+[![p5.glitch 2021 Basel Media Art Nomination](https://raw.githubusercontent.com/ffd8/p5.glitch/master/includes/images/BFP.Laurel_Medienkunstpreis_Nominiert2021_glitch.png)](https://www.kultur.bs.ch/kulturprojekte/film-und-medienkunst/preisvergaben.html)
 
 
 ## License
