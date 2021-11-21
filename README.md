@@ -472,7 +472,7 @@ glitch.debug(false); // disable debug (default)
 
 
 ## Contributing
-Found a bug, missing feature, wanna chat? Have you created a project with p5.glitch, please let me know!  
+Found a bug, missing feature, and/or created a project with p5.glitch, let me know!  
 [Create an issue](https://github.com/ffd8/p5.glitch/issues) on GitHub. 
 
 ## In the Wild
