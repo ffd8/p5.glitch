@@ -1,10 +1,11 @@
-// p5.glitch v0.1.3
-// cc teddavis.org 2021
+// p5.glitch v0.1.4
+// cc teddavis.org 2020 -
 
 class Glitch{
 	constructor(instance){
 		if(instance !== undefined) this.p5 = instance;
 		else this.p5 = p5.instance;
+		this.version = '0.1.4';
 		this.mode = 'image';
 		this.width = 1;
 		this.height = 1;
