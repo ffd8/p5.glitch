@@ -1,6 +1,6 @@
 {
   "name": "p5.glitch",
-  "version": "0.1.5",
+  "version": "0.1.4",
   "description": "p5.js library for glitching images and binary files",
   "main": "p5.glitch.js",
   "files": [],
