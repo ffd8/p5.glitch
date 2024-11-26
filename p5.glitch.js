@@ -278,7 +278,7 @@ class Glitch{
 		bytePos = this.parsePosition(bytePos);
 		let newData = this.bytesGlitched.slice();
 
-		newData[bytePos] = this.parseByte(random(255));
+		newData[bytePos] = this.parseByte(this.p5.random(255));
 
 		this.updateBytes(newData);
 	}
