@@ -331,6 +331,45 @@ glitch.limitBytes(0.5, 0.6); // only modify the middle 10% of file
 
 ---
 
+#### getOffset( hex, *[shiftOffset]* )
+Returns the offset position within the **bytesGlitched** array by searching based on a hex signature. For example, finding the [JPEG Quantization Tables](https://en.wikipedia.org/wiki/JPEG#Syntax_and_structure) by searching for *ffdb*, Optionally give a value to *shiftOffset*, to shift the returned value backwards/forwards x steps from offset position. 
+
+```javascript
+// find JPEG quanization table, shifted to 1st of 64 DCT offsets
+let quantOffset = glitch.getOffset('ffdb', 3);
+
+// walk through byte values
+glitch.replaceByte(quantOffset, frameCount%255);
+```
+
+---
+
+#### getHex( offset )
+Returns the hex (00 - ff) value from the **bytesGlitched** array based on an offset position. Useful to adjust a given byte based on its actual value.
+
+```javascript
+// find JPEG quanization table, shifted to 1st of 64 DCT offsets
+let quantOffset = glitch.getOffset('ffdb', 3);
+
+// print current value as HEX
+print(glitch.getHex(quantOffset));
+```
+
+---
+
+#### getByte( offset )
+Returns the byte (0 - 255) value from the **bytesGlitched** array based on an offset position. Useful to adjust a given byte based on its actual value.
+
+```javascript
+// find JPEG quanization table, shifted to 1st of 64 DCT offsets
+let quantOffset = glitch.getOffset('ffdb', 3);
+
+// print current value as BYTE
+print(glitch.getByte(quantOffset));
+```
+
+---
+
 #### randomByte( bytePos )
 Sets a *single* byte, at provided **bytePos** position, to a random value between 0 - 255. Can set position by decimal or hex.
 
