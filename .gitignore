@@ -2,3 +2,6 @@
 sandbox/
 dist/
 .jshintrc
+.gitignore
+.gitattributes
+.github
