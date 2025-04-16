@@ -382,7 +382,7 @@ class Glitch{
 	// return hex (00 - ff) of given offset
 	getHex(offset){
 		let curByte = this.bytesGlitched[offset%this.bytesGlitched.length];
-		return this.bytesToHex([curByte])
+		return this.bytesToHex([curByte]);
 	}
 
 	// handle changes
