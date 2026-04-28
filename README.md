@@ -479,7 +479,7 @@ Convert **byte** array to hex for string based manipulations with `bytesToHex()`
 // custom hex glitch function
 let tempHex = glitch.bytesToHex(glitch.bytes); // bytes array to hex
 tempHex = tempHex.split('ffff').join('cccc'); // find + replace hex
-let newBytes = hexToBytes(tempHex);
+let newBytes = glitch.hexToBytes(tempHex);
 glitch.updateBytes(newBytes); // updates glitch.bytesGlitched
 
 // ... display/save/etc have current changes

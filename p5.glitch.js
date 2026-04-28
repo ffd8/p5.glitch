@@ -569,7 +569,7 @@ class Glitch{
 	// Convert a hex string to a byte array
 	hexToBytes(hex) {
 		for (var bytes = [], c = 0; c < hex.length; c += 2) {
-			bytes.push(parseInt(hex.substr(c, 2), 16));
+			bytes.push(this.parseInt(hex.substr(c, 2), 16));
 		}
 		return bytes;
 	}
